@@ -1,8 +1,8 @@
   kirby:
     build:
       context: ./kirby
-    image: tritrics/ahoi-starterkit-kirby
-    container_name: ahoi-starterkit-kirby
+    image: tritrics/ahoi-plainkit-kirby
+    container_name: ahoi-plainkit-kirby
     ports:
       - '8081:80'
     volumes:
