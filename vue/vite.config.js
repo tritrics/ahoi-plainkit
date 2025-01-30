@@ -1,6 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
@@ -15,14 +14,6 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: './hostconfig.js',
-          dest: './',
-        },
-      ],
-    }),
   ],
   server: {
     host: true,
