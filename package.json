@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "",
+  "name": "ahoi-plainkit",
+  "version": "0.0.1",
   "private": true,
   "ahoi": {
     "project": true
