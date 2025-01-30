@@ -1,6 +1,3 @@
-# %projectname%
+# ahoi-plainkit
 
-## Author
-
-Michael Adams  
-E-Mail: [ma@tritrics.dk](mailto:ma@tritrics.dk)
+Startingpoint for websites with Kirby, Vue and Ahoi-Plugins.
