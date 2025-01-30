@@ -1,0 +1,14 @@
+  vue:
+    image: tritrics/ahoi-starterkit-vue
+    container_name: ahoi-starterkit-vue
+    build:
+      context: ./vue
+    ports:
+      - 8080:8080
+    volumes:
+      - ./vue:/srv/app
+      - /srv/app/node_modules
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
+    tty: true

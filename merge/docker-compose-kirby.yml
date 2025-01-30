@@ -1,0 +1,10 @@
+  kirby:
+    build:
+      context: ./kirby
+    image: tritrics/ahoi-starterkit-kirby
+    container_name: ahoi-starterkit-kirby
+    ports:
+      - '8081:80'
+    volumes:
+      - ./kirby/public:/var/www/html
+      - ./kirby/log:/var/log/apache2
