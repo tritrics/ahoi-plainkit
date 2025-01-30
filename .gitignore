@@ -1,29 +1,28 @@
-# Filetypes
-# ------------
-Icon
 .DS_Store
-.lock
-composer.lock
-*.sublime-workspace
-/.vscode
-/.idea
-.env.local
 .env.*.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+.env.local
 .idea
-.vscode
-*.suo
-*.ntvs*
+/.idea
+*.local
+.lock
+*.log
 *.njsproj
+*.ntvs*
 *.sln
+*.sublime-workspace
+*.suo
 *.sw?
-package-lock.json
+*.tsbuildinfo
+.vscode/*
+/.vscode
 
-# Kirby
-# ---------------
+composer.lock
+coverage
+/cypress/videos/
+/cypress/screenshots/
+dist
+dist-ssr
+Icon
 /kirby/log/
 /kirby/public/vendor/
 /kirby/public/site/cache/*
@@ -35,8 +34,13 @@ package-lock.json
 /kirby/public/media/*
 !/kirby/public/media/index.html
 /kirby/public/site/plugins/ahoi
+lerna-debug.log*
+logs
+node_modules
+npm-debug.log*
+package-lock.json
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Vue
-# ---------------
-/vue/node_modules/
-/vue/dist/
+!.vscode/extensions.json

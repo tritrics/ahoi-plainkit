@@ -1,6 +1,6 @@
   vue:
-    image: tritrics/ahoi-starterkit-vue
-    container_name: ahoi-starterkit-vue
+    image: tritrics/ahoi-plainkit-vue
+    container_name: ahoi-plainkit-vue
     build:
       context: ./vue
     ports:
