@@ -1,0 +1,27 @@
+type: fields
+fields:
+  pageimage:
+    extends: fields/images
+    label: Beitrags-/Seitenbild
+    help: Querformat, mind. 2400 X 1260 Pixel
+    multiple: false
+  meta:
+    type: object
+    label: Metadaten
+    fields:
+      info:
+        type: info
+        label: Info
+        text: Metadaten sind relevant für Suchmaschinen und soziale Medien und sind für den Besucher der Seite nicht sichtbar. Wenn die Felder leer bleiben, werden die allgemeinen Metadaten verwendet (siehe Globale Inhalte).
+        theme: none
+      keywords:
+        type: tags
+        label: Schlagworte
+        max: 10
+        help: max. 10 Begriffe, die den Seiteninhalt beschreiben
+      description:
+        type: textarea
+        label: Beschreibung
+        buttons: false
+        maxlength: 256
+        help: kurze textliche Beschreibung des Seiteninhalts
