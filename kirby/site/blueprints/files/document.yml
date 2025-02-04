@@ -1,0 +1,24 @@
+title: Dokument
+options:
+  changeTemplate: false
+accept:
+  mime: application/pdf
+fields:
+  title:
+    label: Titel
+    type: text
+    maxlength: 64
+    required: true
+    width: 1/2
+  version:
+    label: Version vom
+    type: date
+    default: today
+    width: 1/4
+  gap1:
+    type: gap
+    width: 1/4
+  description:
+    label: Beschreibung
+    type: textarea
+    buttons: false

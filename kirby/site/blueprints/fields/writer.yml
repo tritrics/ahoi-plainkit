@@ -1,0 +1,30 @@
+type: writer
+label: Text
+marks:
+  - bold
+  - italic
+  - underline
+  - '|'
+  - link
+  - '|'
+  - clear
+nodes:
+  - paragraph
+  - bulletList
+  - orderedList
+  - quote
+toolbar:
+  inline: false
+  marks:
+    - bold
+    - italic
+    - underline
+    - '|'
+    - link
+    - '|'
+    - clear
+  nodes:
+    - paragraph
+    - bulletList
+    - orderedList
+    - quote

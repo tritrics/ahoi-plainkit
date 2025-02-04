@@ -1,0 +1,10 @@
+=hsl-vars($name, $h: 0, $s: 0, $boost: 0)
+  /* kirby: $lightness: 98, 94, 88, 80, 70, 60, 45, 30, 15*/
+  $lightness: 96%, 91%, 86%, 79%, 64%, 50%, 38%, 28%, 20%
+  $counter: 0
+  $s: $s * 1%
+  $boost: $boost * 1%
+  @each $l in $lightness
+    $counter: $counter + 100
+    $l: $l + $boost
+    --color-#{"" + $name}-#{$counter}: hsl(#{$h}, #{$s}, #{$l})

@@ -1,0 +1,49 @@
+@use "sass:list"
+
+=unselectable
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=ellipsis
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+=font($name: '')
+  @if $name != ''
+    $name: '-#{$name}'
+  font-family: var(--font-family#{$name})
+  font-size: var(--font-size#{$name})
+  line-height: var(--line-height#{$name})
+  color: var(--font-color#{$name})
+  hyphens: var(--hyphens)
+  hyphenate-limit-chars: var(--hyphenate-limit-chars)
+
+// xs, sm, md, lg, xl, 2xl, 3xl
+=font-size($size: md)
+  font-size: var(--font-size-#{$size})
+  line-height: var(--line-height-#{$size})
+
+=article($elems...)
+  @for $i from 0 to list.length($elems)
+    article #{list.nth($elems, $i + 1)}
+      @content
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+    .article #{list.nth($elems, $i + 1)}
+      @content
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+    #{list.nth($elems, $i + 1)}.article
+      @content
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0

@@ -1,0 +1,36 @@
+title: Textseite
+icon: file-text
+image:
+  back: white
+  query: false
+
+options:
+  move: false
+
+status:
+  draft:
+    label: Entwurf
+    text: Die Seite ist nicht öffentlich und kann nur vom Redakteur gesehen und bearbeitet werden.
+  listed:
+    label: öffentlich
+    text: Die Seite ist online und erscheint auf der Webseite.
+
+tabs:
+  content:
+    label: Inhalt
+    icon: document
+    columns:
+      main:
+        width: 2/3
+        sections:
+          fields:
+            type: fields
+            fields:
+              copy:
+                extends: fields/writer
+      side:
+        width: 1/3
+        sections:
+          meta: sections/meta
+
+  images: tabs/imagebrowser

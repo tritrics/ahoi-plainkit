@@ -1,0 +1,35 @@
+=margin-block-between($margin)
+  margin-block-start: calc($margin / 2)
+  margin-block-end: calc($margin / 2)
+  &:first-child
+    margin-block-start: 0
+  &:last-child
+    margin-block-end: 0
+
+=margin-inline-between($margin)
+  margin-inline-start: calc($margin / 2)
+  margin-inline-end: calc($margin / 2)
+  &:first-child
+    margin-inline-start: 0
+  &:last-child
+    margin-inline-end: 0
+
+=padding-block-between($padding)
+  padding-block-start: calc($padding / 2)
+  padding-block-end: calc($padding / 2)
+  &:first-child
+    padding-block-start: 0
+  &:last-child
+    padding-block-end: 0
+
+=padding-inline-between($padding)
+  margin-inline-start: calc($padding / 2)
+  margin-inline-end: calc($padding / 2)
+  &:first-child
+    margin-inline-start: 0
+  &:last-child
+    margin-inline-end: 0
+
+=vars($grid, $count:10)
+  @for $i from 1 through $count
+    --spacing-#{$i}: #{$grid * $i}

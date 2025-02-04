@@ -1,0 +1,9 @@
+type: link
+label: Link
+help: Um Dokumente zu verlinken, diese vorher unter Seite/Dateien hochladen.
+options:
+  - page
+  - url
+  - file
+  - email
+  - tel

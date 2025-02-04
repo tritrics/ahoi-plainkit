@@ -1,0 +1,30 @@
+@use "../mixins/text"
+  
+.ahoi-label
+  &.has-error
+    color: var(--font-color-control-label-error)
+    & a
+      color: var(--font-color-control-label-error) !important
+  &.is-disabled
+    color: var(--font-color-control-disabled) !important
+  
+.ahoi-label-inline
+  position: absolute
+  left: 1rem
+  top: .4rem
+  font-size: .8rem
+  line-height: 1
+  color: var(--font-color-control-label)
+  transition: all .2s linear
+  z-index: var(--z-under)
+  +text.unselectable
+  &.is-empty
+    top: 1.1rem
+    font-size: 1.1rem
+  
+.ahoi-label-option
+  flex-grow: 0
+  font-size: 1.1rem
+  line-height: 1.2
+  color: var(--font-color-control-label)
+  +text.unselectable

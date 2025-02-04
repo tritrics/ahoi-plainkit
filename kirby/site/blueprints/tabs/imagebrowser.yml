@@ -1,0 +1,13 @@
+label: Bilder
+icon: images
+sections:
+  images:
+    type: files
+    label: Bilder
+    search: true
+    query: page.images
+    template: image
+    text: "{{ file.title }}"
+    info: "{{ file.dimensions }} Pixel<br />Vorlage: {{ file.blueprint.title }}"
+    layout: cards
+    size: medium

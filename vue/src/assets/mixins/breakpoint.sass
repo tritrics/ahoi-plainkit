@@ -1,0 +1,61 @@
+// Use either dynamic or fixed breakpoints
+//
+// Dynamic breakpoints
+
+=from($min)
+  @media screen and (min-width: #{$min}px)
+    @content
+
+=between($max, $min)
+  $min: $min + 1
+  @media screen and (min-width: #{$min}px) and (max-width: #{$max}px)
+    @content
+
+=until($max)
+  @media screen and (max-width: #{$max}px)
+    @content
+    
+// Fixed breakpoints xl, lg, md, sm, xs
+// add these variables to variables.sass
+//
+//        xl: max     -  1200
+// $break-lg: 1200 // - 1025
+// $break-md: 1024 // -  769
+// $break-sm: 768  // -  481
+// $break-xs: 480  // -    0
+
+=xl-only
+  $min: $break-lg + 1
+  @media screen and (min-width: #{$min}px)
+    @content
+
+=lg
+  @media screen and (max-width: #{$break-lg}px)
+    @content
+
+=lg-only
+  $min: $break-md + 1
+  @media screen and (min-width: #{$min}px) and (max-width: #{$break-lg}px)
+    @content
+
+=md
+  @media screen and (max-width: #{$break-md}px)
+    @content
+
+=md-only
+  $min: $break-sm + 1
+  @media screen and (min-width: #{$min}px) and (max-width: #{$break-md}px)
+    @content
+
+=sm
+  @media screen and (max-width: #{$break-sm}px)
+    @content
+
+=sm-only
+  $min: $break-xs + 1
+  @media screen and (min-width: #{$min}px) and (max-width: #{$break-sm}px)
+    @content
+
+=xs
+  @media screen and (max-width: #{$break-xs}px)
+    @content

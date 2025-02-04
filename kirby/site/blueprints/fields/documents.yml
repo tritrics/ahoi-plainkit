@@ -1,0 +1,8 @@
+type: files
+label: Dokumente
+text: "{{ file.title }}"
+query: page.documents
+help: Es können nur PDF-Dateien hochgeladen werden.
+multiple: true
+uploads:
+  template: document

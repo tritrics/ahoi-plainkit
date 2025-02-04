@@ -1,0 +1,12 @@
+type: files
+label: Bilder
+layout: cardlets
+text: "{{ file.title }}"
+info: "{{ file.dimensions }} Pixel<br />Vorlage: {{ file.blueprint.title }}"
+query: page.images.filterBy('template', 'image')
+help: Zum Eingeben eines Bildtitels auf das Bild klicken.
+multiple: true
+image:
+  cover: true
+uploads:
+  template: image

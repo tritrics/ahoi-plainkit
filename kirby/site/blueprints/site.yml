@@ -1,0 +1,193 @@
+title: Site
+
+tabs:
+  pages:
+    label: Seiten
+    icon: page
+    columns:
+      main:
+        width: 1/1
+        sections:
+          drafts:
+            label: Entwürfe
+            type: pages
+            empty: Keine Seiten
+            status: drafts
+            search: true
+            templates:
+              - default
+          listed:
+            label: öffentlich
+            type: pages
+            empty: Keine Seiten
+            status: listed
+            search: true
+            templates:
+              - default
+              - error
+              - home
+            help: Seiten müssen in die Navigation eingefügt werden, um auf der Seite zu erscheinen.
+
+  navigation:
+    label: Navigation
+    icon: menu
+    columns:
+      main:
+        width: 2/3
+        sections:
+          navigations:
+            type: fields
+            fields:
+              nav_main:
+                type: structure
+                label: Haupt-Navigation
+                columns:
+                  link:
+                      width: 1/2
+                  title:
+                      width: 1/2
+                fields:
+                  link:
+                    label: Link
+                    type: link
+                    required: true
+                    options:
+                      - page
+                      - url
+                  title:
+                    type: text
+                    label: Titel
+                    help: optional
+                    width: 2/3
+                  style:
+                    label: Style
+                    type: select
+                    default: link
+                    required: true
+                    width: 1/3
+                    options:
+                      link: Textlink
+                      button: Button
+              nav_footer:
+                type: structure
+                label: Navigation Fußteil
+                columns:
+                  link:
+                      width: 1/2
+                  title:
+                      width: 1/2
+                fields:
+                  link:
+                    label: Link
+                    type: link
+                    required: true
+                    options:
+                      - page
+                      - url
+                      - file
+                      - email
+                      - tel
+                  title:
+                    type: text
+                    label: Titel
+                    help: optional
+      side:
+        width: 1/3
+        sections:
+          others:
+            type: fields
+            fields:
+              nav_legal:
+                type: object
+                label: Spezielle Seiten
+                required: true
+                fields:
+                  dataprotection:
+                    extends: fields/pages
+                    label: Datenschutz
+                    multiple: false
+                    required: true
+                  imprint:
+                    extends: fields/pages
+                    label: Impressum
+                    multiple: false
+                    required: true
+                  conditions:
+                    extends: fields/pages
+                    label: AGBs
+                    multiple: false
+                    required: true
+
+  globals:
+    label: Globale Inhalte
+    icon: tag
+    columns:
+      main:
+        width: 2/3
+        sections:
+          content:
+            type: fields
+            fields:
+              contact:
+                type: object
+                label: Kontaktdaten
+                fields:
+                  name:
+                    label: Name
+                    type: text
+                    required: true
+                    maxlength: 32
+                    width: 1/2
+                  phone:
+                    label: Telefon
+                    type: tel
+                    required: true
+                    width: 1/2
+                  street:
+                    label: Straße
+                    type: text
+                    required: true
+                    maxlength: 32
+                    width: 1/2
+                  email:
+                    label: E-Mail
+                    type: email
+                    required: true
+                    width: 1/2
+                  town:
+                    label: Ort
+                    type: text
+                    required: true
+                    maxlength: 32
+                    width: 1/2
+      side:
+        width: 1/3
+        sections:
+          meta:
+            extends: sections/meta
+            fields:
+              pageimage:
+                query: site.images.filterBy('template', 'image')
+                required: true
+              meta:
+                fields:
+                  info:
+                    text: Metadaten sind relevant für Suchmaschinen und soziale Medien und sind für den Besucher der Seite nicht sichtbar.
+                  keywords:
+                    required: true
+                    text: max. 10 Begriffe, die die Webseite beschreiben
+                  description:
+                    required: true
+                    help: kurze textliche Beschreibung der Webseite
+
+  images:
+    extends: tabs/imagebrowser
+    sections:
+      images:
+        query: site.images
+
+  files:
+    extends: tabs/filebrowser
+    sections:
+      files:
+        query: site.documents

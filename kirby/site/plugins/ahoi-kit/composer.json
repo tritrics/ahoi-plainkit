@@ -1,0 +1,35 @@
+{
+  "name": "tritrics\/ahoi-kit",
+  "description": "Ahoi extensions and starter-kit",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Michael Adams",
+      "email": "ma@tritrics.dk"
+    }
+  ],
+  "license": "ISC",
+  "type": "kirby-plugin",
+  "require": {
+    "php": ">=8.2",
+    "getkirby\/composer-installer": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tritrics\\AhoiKit\\": "lib\/",
+      "Tritrics\\AhoiKit\\Root\\": ".\/"
+    },
+    "files": [
+      "config.php"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "getkirby\/composer-installer": true
+    },
+    "optimize-autoloader": true
+  },
+  "extra": {
+    "installer-name": "ahoi-kit"
+  }
+}

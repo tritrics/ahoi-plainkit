@@ -1,0 +1,292 @@
+@use "mixins/breakpoint"
+@use "mixins/color"
+@use "mixins/grid"
+@use "mixins/space"
+@use "mixins/text"
+
+@use "ahoi/preflight.sass"
+@use "ahoi/typo.sass"
+@use "ahoi/button.sass"
+@use "ahoi/thumb.sass"
+@use "ahoi/icon.sass"
+@use "ahoi/checkbox.sass"
+@use "ahoi/input.sass"
+@use "ahoi/select.sass"
+@use "ahoi/label.sass"
+@use "ahoi/textarea.sass"
+
+@use "custom/fonts.sass"
+@use "custom/layout.sass"
+
+:root
+
+  // ---------------------------------------------------------
+  // Basic values, layout dimensions
+  // ---------------------------------------------------------
+
+  // spacer (--spacing-1, --spacing-2, ..., --spacing-20)
+  +space.vars(.4rem, 30)
+
+  // basic font-size, also basis for spacer and grid
+  --font-size-base:                     16px
+
+  // horizontal space of content to window-sides
+  // optionally added to content elements if needed
+  --window-pad:                         var(--spacing-5)
+
+  // vertical distance between sections
+  --section-pad-top:                    var(--spacing-3)
+  --section-pad-bottom:                 var(--spacing-3)
+
+  // article
+  --canvas-max-width:                   1780px
+  --canvas-max-width-whitespace:        150px
+  --content-width:                      1200px
+  --article-width:                      920px
+  --article-headline-width:             95%
+
+  // used in multiple components
+  --header-height:                      90px
+
+  // ---------------------------------------------------------
+  // Generic variables
+  // ---------------------------------------------------------
+
+  // colors
+  --color-white:                        hsl(0 0% 100%)
+  --color-black:                        hsl(0 0% 0%)
+
+  +color.hsl-vars(gray)
+  +color.hsl-vars(brand, 266, 60)
+  +color.hsl-vars(accent, 16, 97)
+
+  // font-families, not for direct use
+  --font-aller-light:                   aller-light, sans-serif
+  --font-aller-light-italic:            aller-light-italic, sans-serif
+  --font-aller-medium:                  aller-medium, sans-serif
+  --font-aller-medium-italic:           aller-medium-italic, sans-serif
+  --font-caladea:                       caladea-regular, serif
+
+  // font-size
+  --font-size-xs:                       1.0rem
+  --font-size-sm:                       1.1rem
+  --font-size-md:                       1.2rem
+  --font-size-lg:                       1.6rem
+  --font-size-xl:                       2.8rem 
+  --font-size-2xl:                      4.6rem
+  --font-size-3xl:                      6.2rem 
+
+  // line-height
+  --line-height-xs:                     1.60
+  --line-height-sm:                     1.60
+  --line-height-md:                     1.60
+  --line-height-lg:                     1.60
+  --line-height-xl:                     1.10
+  --line-height-2xl:                    1.10
+  --line-height-3xl:                    1.10
+
+  // rounded
+  --rounded-sm:                         4px
+  --rounded-md:                         5px
+  --rounded-lg:                         6px
+
+  // z-index
+  --z-overlay:                          6
+  --z-dialog:                           5
+  --z-control:                          4
+  --z-drawer:                           3
+  --z-cover:                            2
+  --z-over:                             1
+  --z-content:                          0
+  --z-under:                           -1
+  --z-background:                      -2
+
+
+
+  // ---------------------------------------------------------
+  // Functional variables
+  // ---------------------------------------------------------
+
+  // fonts
+  --font-family:                        var(--font-aller-light)
+  --font-family-italic:                 var(--font-aller-light-italic)
+  --font-family-bold:                   var(--font-aller-medium)
+  --font-family-bold-italic:            var(--font-aller-medium-italic)
+  --font-family-brand:                  var(--font-caladea)
+  --font-size:                          var(--font-size-md)
+  --line-height:                        var(--line-height-md)
+  --font-color:                         var(--color-gray-800)
+  --font-color-white:                   var(--color-white)
+  --font-color-accent:                  var(--color-accent-700)
+  --font-color-minor:                   var(--color-gray-600)
+  --font-color-disabled:                var(--color-gray-500)
+  --font-color-warning:                 var(--color-accent-700)
+  //--font-color-info:
+  //--font-color-success:
+    
+  --hyphens:                            auto
+  --hyphenate-limit-chars:              5 4 4
+
+  // special html-elements
+  --font-family-hero:                   var(--font-caladea)
+  --font-size-hero:                     var(--font-size-3xl)
+  --line-height-hero:                   1
+  --font-color-hero:                    var(--color-gray-800)
+
+  --font-family-h1:                     var(--font-caladea)
+  --font-size-h1:                       var(--font-size-2xl)
+  --line-height-h1:                     var(--line-height-2xl)
+  --font-color-h1:                      var(--color-gray-800)
+
+  --font-family-h2:                     var(--font-caladea)
+  --font-size-h2:                       var(--font-size-xl)
+  --line-height-h2:                     var(--line-height-xl)
+  --font-color-h2:                      var(--color-gray-800)
+  
+  --font-family-h3:                     var(--font-aller-medium)
+  --font-size-h3:                       var(--font-size-lg)
+  --line-height-h3:                     var(--line-height-lg)
+  --font-color-h3:                      var(--color-gray-800)
+
+  --font-family-h4:                     var(--font-aller-medium)
+  --font-size-h4:                       var(--font-size-md)
+  --line-height-h4:                     var(--line-height-md)
+  --font-color-h4:                      var(--color-gray-800)
+
+  --font-family-small:                  var(--font-aller-light)
+  --font-size-small:                    var(--font-size-sm)
+  --line-height-small:                  var(--line-height-sm)
+  --font-color-small:                   var(--color-gray-600)
+
+  --font-family-tiny:                   var(--font-aller-light)
+  --font-size-tiny:                     var(--font-size-xs)
+  --line-height-tiny:                   var(--line-height-xs)
+  --font-color-tiny:                    var(--color-gray-600)
+
+  --font-family-link:                   inherit
+  --font-size-link:                     inherit
+  --line-height-link:                   inherit
+  --font-color-link:                    var(--color-gray-800)
+  --font-color-link-hover:              var(--color-brand-700)
+  --text-decoration-link:               none
+  --text-decoration-link-hover:         underline
+
+  // different for a in article
+  --font-family-link-article:           var(--font-aller-medium)
+  --font-size-link-article:             inherit
+  --line-height-link-article:           inherit
+  --font-color-link-article:            var(--color-brand-700)
+  --font-color-link-hover-article:      var(--color-brand-700)
+  --text-decoration-link-article:       unterline
+  --text-decoration-link-hover-article: underline
+
+  // borders
+  --border-color:                       var(--color-gray-500)
+  --border-color-light:                 var(--color-gray-300)
+
+  // article block spacing
+  --margin-h1:                          var(--spacing-15) 0 var(--spacing-10) 0
+  --margin-h2:                          var(--spacing-9) 0 0 0
+  --margin-h3:                          var(--spacing-5) 0 0 0
+  --margin-h4:                          var(--spacing-2) 0 0 0
+  --margin-block:                       var(--spacing-2) 0 0 0
+  --margin-list:                        var(--spacing-2) 0 0 0
+  --margin-list-item:                   var(--spacing-1) var(--spacing-5)
+
+  // buttons
+  --font-family-button:                 var(--font-aller-medium)
+  --padding-button-default:             .2rem
+
+  --height-button-sm:                   2rem
+  --font-size-button-sm:                var(--font-size-sm)
+  --padding-button-sm:                  0.8rem
+  --border-radius-sm:                   0
+
+  --height-button-md:                   3rem
+  --font-size-button-md:                var(--font-size-md)
+  --padding-button-md:                  1.4rem
+  --border-radius-md:                   0
+
+  --height-button-lg:                   3.8rem
+  --font-size-button-lg:                var(--font-size-lg)
+  --padding-button-lg:                  1.8rem
+  --border-radius-lg:                   0
+
+  --color-button-default:               var(--color-brand-600)
+  --color-button-accent:                var(--color-accent-700)
+  --color-button-minor:                 var(--color-gray-900)
+  --color-button-white:                 var(--color-white)
+
+  --color-button-default-hover:         var(--color-brand-800)
+  --color-button-accent-hover:          var(--color-accent-800)
+  --color-button-minor-hover:           var(--color-gray-800)
+  --color-button-white-hover:           var(--color-gray-300)
+
+  --opacity-button-disabled:            0.7
+
+  // Controls
+  --font-color-control:                 var(--color-gray-800)
+  --font-color-control-error:           var(--color-gray-800)
+  --font-color-control-disabled:        var(--color-gray-500)
+
+  --background-color-control:           var(--color-white)
+  --background-color-control-disabled:  var(--color-gray-200)
+
+  --border-width-control:               1px
+  --border-width-control-error:         2px
+
+  --border-color-control:               var(--color-gray-400)
+  --border-color-control-error:         var(--color-accent-700)
+  --border-color-control-disabled:      var(--color-gray-400)
+
+  --border-radius-control:              var(--rounded-md)
+
+  --font-color-control-label:           var(--color-gray-800)
+  --font-color-control-label-error:     var(--color-accent-700)
+
+  --icon-color-control:                 var(--color-gray-600)
+  --icon-color-control-selected:        var(--color-brand-600)
+  --icon-color-control-error:           var(--color-accent-700)
+  --icon-color-control-disabled:        var(--color-gray-400)
+
+
+  // ---------------------------------------------------------
+  // Project specific
+  // ---------------------------------------------------------
+
+  // minmax(18vw, var(--spacing-18))
+  --pro-section-vertical-pad:           var(--spacing-30)
+  --pro-background-color-home:          color-mix(in hsl, var(--color-brand-100), black 5%)
+
+
+  // ---------------------------------------------------------
+  // Breakpoints
+  // ---------------------------------------------------------
+
+  +breakpoint.until(980)
+    --header-height:                    64px
+    --font-size-xs:                     0.85rem
+    --font-size-sm:                     0.95rem
+    --font-size-md:                     1.0rem
+    --font-size-lg:                     1.35rem
+    --font-size-xl:                     2.4rem 
+    --font-size-2xl:                    3.9rem
+    --font-size-3xl:                    5.3rem 
+    --pro-section-vertical-pad:         var(--spacing-22)
+    
+  +breakpoint.until(640)
+    --font-size-base:                   15px
+    --font-size-xl:                     1.9rem 
+    --font-size-2xl:                    2.1rem
+    --font-size-3xl:                    2.7rem 
+    --font-size-hero:                   var(--font-size-3xl)
+    --window-pad:                       var(--spacing-3)
+    --article-headline-width:           100%
+
+    --height-button-md:                 2.8rem
+    --font-size-button-md:              var(--font-size-md)
+    --padding-button-md:                .8rem
+    --pro-section-vertical-pad:         var(--spacing-10)
+
+  +breakpoint.until(420)
+    --window-pad:                       var(--spacing-2)

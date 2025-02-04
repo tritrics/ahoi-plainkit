@@ -28,11 +28,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       sass: {
-        additionalData: `
-          @import "./src/assets/styles/mixins.sass"
-        `
-      },
-    },
+        api: 'modern'
+      }
+    }
   },
   build: {
     rollupOptions: {

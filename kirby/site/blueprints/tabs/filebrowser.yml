@@ -1,0 +1,11 @@
+label: Dokumente
+icon: folder
+sections:
+  files:
+    type: files
+    label: Dokumente
+    search: true
+    query: page.documents
+    template: document
+    text: "{{ file.title }}"
+    help: Es können nur PDF-Dateien hochgeladen werden.

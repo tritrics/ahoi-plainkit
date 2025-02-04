@@ -1,0 +1,41 @@
+title: Bild
+options:
+  changeTemplate: false
+accept: 
+  mime: image/jpeg, image/png, image/webp
+create:
+  width: 2400
+  height: 2400
+  crop: false
+  format: jpeg
+fields:
+  title:
+    label: Titel
+    type: text
+    maxlength: 64
+    required: true
+    width: 1/2
+  license_required:
+    label: Nutzungslizenz
+    type: toggle
+    default: false
+    width: 1/4
+    text:
+      - nicht erforderlich
+      - erhalten / erworben
+  licence_owner:
+    label: Rechteinhaber / Urheber
+    type: text
+    required: true
+    width: 1/4
+    when:
+      license_required: true
+  gap:
+    type: gap
+    width: 1/4
+    when:
+      license_required: false
+  description:
+    label: Beschreibung
+    type: textarea
+    buttons: false

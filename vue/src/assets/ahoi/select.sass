@@ -1,0 +1,47 @@
+@use "../mixins/text"
+  
+.ahoi-input-select
+  display: flex
+  position: relative
+  select
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    opacity: 0
+  .input-selected
+    display: flex
+    flex-direction: column
+    justify-content: center
+    flex-grow: 1
+    height: 100%
+    padding: 2px 1rem 2px 1rem
+    font-size: 1.1rem
+    color: var(--font-color-control)
+    background-color: transparent
+    +text.ellipsis
+  &::after
+    align-self: center
+    display: inline-block
+    content: ""
+    width: .8rem
+    height: .8rem
+    margin: 0 .4rem 0 .8rem
+    border: solid var(--icon-color-control)
+    border-width: 0 .2rem .2rem 0
+    transform-origin: 70% 0%
+    transform: rotate(45deg)
+    z-index: var(--z-under)
+  &.is-empty
+    .input-selected
+      color: var(--font-color-control-disabled)
+  &.has-error
+    border: var(--border-width-control-error) solid var(--border-color-control-error)
+    &::after
+      border-color: var(--icon-color-control-error)
+  &.is-disabled
+    .input-selected
+      color: var(--font-color-control-disabled)
+    &::after
+      border-color: var(--icon-color-control-disabled)

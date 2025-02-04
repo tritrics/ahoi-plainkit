@@ -1,0 +1,31 @@
+title: Startseite
+icon: home
+image:
+  back: white
+  query: false
+
+options:
+  changeStatus: false
+  changeSlug: false
+  duplicate: false
+  delete: false
+
+tabs:
+  content:
+    label: Inhalt
+    icon: document
+    columns:
+      main:
+        width: 2/3
+        sections:
+          fields:
+            type: fields
+            fields:
+              copy:
+                extends: fields/writer
+      side:
+        width: 1/3
+        sections:
+          meta: sections/meta
+
+  images: tabs/imagebrowser

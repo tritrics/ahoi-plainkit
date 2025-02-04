@@ -1,0 +1,7 @@
+type: pages
+label: Seiten
+query: site.children.listed
+multiple: true
+image:
+  back: white
+  query: false

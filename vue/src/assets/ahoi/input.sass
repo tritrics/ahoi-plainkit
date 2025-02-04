@@ -1,0 +1,35 @@
+.ahoi-input
+  position: relative
+  height: 100%
+  width: 100%
+  background-color: var(--background-color-control)
+  border: var(--border-width-control) solid var(--border-color-control)
+  border-radius: var(--border-radius-control)
+  z-index: var(--z-content)
+  input
+    width: 100%
+    height: 100%
+    padding: 2px 1rem 2px 1rem
+    font-size: 1.1rem
+    color: var(--font-color-control)
+    background-color: transparent
+    border: none
+    &:focus
+      outline: none
+  &.has-error
+    border: var(--border-width-control-error) solid var(--border-color-control-error)
+    input
+      color: var(--font-color-control-error)
+  &.is-disabled
+    border-color: var(--border-color-control-disabled)
+    input
+      color: var(--font-color-control-disabled) !important
+      -webkit-text-fill-color: var(--font-color-control-disabled)
+      opacity: 1
+      cursor: not-allowed
+  &.has-label-inline
+    input
+      padding: 0 1rem 2px 1rem
+      border-top: 1.3rem solid transparent
+      &.is-empty
+        border-top-width: .4rem

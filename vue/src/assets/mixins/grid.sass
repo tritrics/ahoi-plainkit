@@ -1,0 +1,28 @@
+@use "sass:list"
+
+=create($cols, $rows, $areas)
+  display: grid
+  @if list.length($cols) > 0
+    +cols($cols...)
+  @if list.length($rows) > 0
+    +rows($rows...)
+  @if list.length($areas) > 0
+    +areas($areas...)
+
+=cols($cols...)
+  grid-template-columns: #{join($cols)}
+
+=rows($rows...)
+  grid-template-rows: #{join($rows)}
+
+=areas($areas...)
+  grid-template-areas: #{join($areas, true)}
+
+@function join($list, $quote: false)
+  $res: ''
+  @each $elem in $list
+    @if $quote
+      $res: $res + ' "#{$elem}"'
+    @else
+      $res: $res + ' #{$elem}'
+  @return $res
