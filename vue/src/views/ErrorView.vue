@@ -4,9 +4,11 @@ const { page } = inject('ahoi')
 </script>
 
 <template>
-  <section class="error-section">
-    <p>Page not Found</p>
-  </section>
+  <main>
+    <section class="error-section">
+      <p>Page not Found</p>
+    </section>
+  </main>
 </template>
 
 <style lang="sass"></style>

@@ -4,9 +4,11 @@ const { page } = inject('ahoi')
 </script>
 
 <template>
-  <section class="home-section">
-    <p>Home</p>
-  </section>
+  <main>
+    <section class="home-section">
+      <p>{{ page.fields.title.str() }}</p>
+    </section>
+  </main>
 </template>
 
 <style lang="sass"></style>

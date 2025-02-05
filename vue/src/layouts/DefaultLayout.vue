@@ -2,14 +2,11 @@
 import HeaderSection from '../sections/HeaderSection.vue'
 import FooterSection from '../sections/FooterSection.vue'
 import OverlaySection from '../sections/OverlaySection.vue'
-
 </script>
 
 <template>
   <HeaderSection />
-  <main>
-    <slot></slot>
-  </main>
+  <slot></slot>
   <FooterSection />
   <OverlaySection />
 </template>

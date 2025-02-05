@@ -7,11 +7,10 @@ export default {
     meta: {
       separator: ' | ',
       brand: {
-        default: 'Ahoi Starterkit',
+        default: 'Ahoi Plainkit',
         site: 'title'
       },
       title: {
-        default: 'Startseite',
         page: 'title'
       },
       keywords: {
@@ -40,11 +39,11 @@ export default {
       scroll: true,
       blueprints: {
         default: {
-          component:      () => import('/src/components/views/DefaultView.vue'),
-          layout:         () => import('/src/components/layouts/DefaultLayout.vue'),
+          component:      () => import('/src/views/DefaultView.vue'),
+          layout:         () => import('/src/layouts/DefaultLayout.vue'),
         },
-        'error':          () => import('/src/components/views/ErrorView.vue'),
-        'home':           () => import('/src/components/views/HomeView.vue'),
+        'error':          () => import('/src/views/ErrorView.vue'),
+        'home':           () => import('/src/views/HomeView.vue'),
       }
     }
   }
