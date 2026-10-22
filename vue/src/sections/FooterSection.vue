@@ -2,7 +2,7 @@
 
 <template>
   <footer>
-    <div>The Footer</div>
+    <div>Footer</div>
   </footer>
 </template>
 

@@ -1,5 +1,6 @@
   vue:
     image: tritrics/ahoi-plainkit-vue
+    pull_policy: build # never pull the outdated image of the same name from Docker Hub
     container_name: ahoi-plainkit-vue
     build:
       context: ./vue

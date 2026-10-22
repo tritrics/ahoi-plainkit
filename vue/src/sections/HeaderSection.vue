@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <div>The Header</div>
+    <div>Header</div>
   </header>
 </template>
 
